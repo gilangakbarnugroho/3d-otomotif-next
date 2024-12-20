@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap'); */
+
+/* Custom CSS Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: #1E90FF; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+  }
+}
+
+html, body {
+  color: var(--foreground);
+  background: var(--background);
+  @apply font-sans;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Global Box Sizing */
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Button Styles */
+@layer components {
+  .btn-bluetiful {
+    @apply px-7 py-3 shadow-lg shadow-bluetiful-50 border-bluetiful rounded-full bg-bluetiful text-white hover:bg-white hover:text-bluetiful-500 font-semibold;
+  }
+
+  .btn-bluetiful-program {
+    @apply px-7 py-3 shadow-lg shadow-bluetiful-50 border-bluetiful rounded-tl-lg rounded-tr-[4rem] rounded-bl-[4rem] rounded-br-lg bg-bluetiful text-white hover:bg-white hover:text-bluetiful-500 font-semibold;
+  }
+
+  .btn-bluetiful-outline {
+    @apply px-7 py-3 shadow-lg rounded-full bg-white text-bluetiful hover:bg-bluetiful hover:text-white font-semibold;
+  }
+}
+
+/* Swiper Sliders */
+.mainSwiper {
+  width: 100%;
+  height: 300px;
+}
+
+.gallerySwiper {
+  width: 100%;
+  height: 100px;
+}
+
+.gallerySwiper .swiper-slide {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.gallerySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 16rem;
+  background-color: #3377E2; 
+}
+
+.sidebar a:hover {
+  background-color: #5CADFF; 
+}
+
+.main-content {
+  margin-left: 16rem;
+}
+
+/* Animation Clients */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 20s linear infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
